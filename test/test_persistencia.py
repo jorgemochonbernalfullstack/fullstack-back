@@ -1,5 +1,5 @@
 """Pruebas Persistencia"""
-from persistencia.archivo import guardar_pedido
+from persistencia.persistencia import guardar_pedido
 
 
 def test_guardar_pedido():
