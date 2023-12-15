@@ -1,16 +1,12 @@
 """Importar bibliotecas de Python"""
 from flask import Flask, request, redirect
-
-"""Importar archivos"""
 from persistencia.persistencia import is_registrado
 
 """Módulo principal de la aplicación web"""
 
 app = Flask(__name__)
 
-
 """Método principal, conecta el front y el back para crear el pedido"""
-
 
 @app.route("/pizza", methods=["POST"])
 def prepara_pedido():
