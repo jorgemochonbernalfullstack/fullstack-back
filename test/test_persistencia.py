@@ -1,11 +1,12 @@
 """Pruebas Persistencia"""
-import persistencia as pt
+from persistencia.archivo import guardar_pedido
 
 
 def test_guardar_pedido():
+    """Prueba funcion guardar pedido"""
     with open("pedidos.txt", "w+", encoding="utf-8") as file:
-        pt.guardar_pedido("Pedro", "Gil de Diego")
-        pt.guardar_pedido("Michael", "Jordan")
+        guardar_pedido("Pedro", "Gil de Diego")
+        guardar_pedido("Michael", "Jordan")
         firstline = file.readline()
         secondline = file.readline()
     file.close()
