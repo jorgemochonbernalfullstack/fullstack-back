@@ -1,21 +1,22 @@
-"""importar biblioteca python"""
-
+"""Importar bibliotecas de Python"""
 from flask import Flask, request, redirect
 
-"""impoortar archivos"""
-
-import persistencia as p
+"""Importar archivos"""
+from persistencia.persistencia import isRegistrado
 
 """Módulo principal de la aplicación web"""
 
 app = Flask(__name__)
 
 
-"""Metodo princpal, contecta el front y el back para crear el pedido"""
+"""Método principal, conecta el front y el back para crear el pedido"""
 
 
 @app.route("/pizza", methods=["POST"])
 def prepara_pedido():
+    """
+    Maneja solicitudes POST para preparar pedidos.
+    """
     cliente_nombre = request.form.get("cliente_nombre")
     cliente_apellido = request.form.get("cliente_apellido")
     print(f"Nombre: {cliente_nombre}, Apellido: {cliente_apellido}")
