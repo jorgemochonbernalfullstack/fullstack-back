@@ -2,7 +2,7 @@
 from flask import Flask, request, redirect
 
 """Importar archivos"""
-from persistencia.persistencia import isRegistrado
+from persistencia.persistencia import is_registrado
 
 """Módulo principal de la aplicación web"""
 
