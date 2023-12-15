@@ -21,7 +21,7 @@ def prepara_pedido():
     cliente_apellido = request.form.get("cliente_apellido")
     print(f"Nombre: {cliente_nombre}, Apellido: {cliente_apellido}")
     mensaje = f"Pedido preparado para {cliente_nombre} {cliente_apellido}"
-    p.isRegistrado(cliente_nombre, cliente_apellido)
+    is_registrado(cliente_nombre, cliente_apellido)
     return redirect(
         f"http://localhost/naxer/pizzafullstack/solicita_pedido.html?mensaje={mensaje}",
         code=302,
