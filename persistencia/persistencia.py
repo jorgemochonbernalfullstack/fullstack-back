@@ -29,7 +29,7 @@ def is_disponible(size):
     if size == "":
         print("Error al verificar el tamaño")
         return False
-    elif size == "S":
+    if size == "S":
         return "No disponible"
-    else:
-        return "Disponible"
+    return "Disponible"
+
