@@ -15,7 +15,7 @@ def prepara_pedido():
     mensaje = f"Pedido preparado para {cliente_nombre} {cliente_apellido}"
     is_registrado(cliente_nombre, cliente_apellido)
     return redirect(
-        f"http://localhost/naxer/pizzafullstack/solicita_pedido.html?mensaje={mensaje}",
+        f"http://localhost/naxer/pizzafullstack/front/solicita_pedido.html?mensaje={mensaje}",
         code=302,
     )
 
@@ -25,4 +25,5 @@ def checksize():
     """Comprueba disponibilidad de un tamaño de pizza"""
     size = request.form.get("size")
     mensaje = is_disponible(size)
+    print(f"Tamannio: {mensaje}")
     return Response(mensaje, 200, {"Access-Control-Allow-Origin": "*"})
