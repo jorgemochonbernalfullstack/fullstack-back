@@ -18,7 +18,7 @@ def recorrer_pedidos(nombre, apellido):
     """
     Verifica si el nombre y el apellido no están vacíos.
     """
-    if apellido == "" or apellido == "":
+    if nombre in ("") or apellido in (""):
         print("Error al registrar el pedido.")
         return False
     guardar_pedido(nombre, apellido)

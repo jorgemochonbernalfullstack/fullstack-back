@@ -6,7 +6,6 @@ from persistencia.persistencia import is_registrado
 
 app = Flask(__name__)
 
-"""Método principal, conecta el front y el back para crear el pedido"""
 
 @app.route("/pizza", methods=["POST"])
 def prepara_pedido():
