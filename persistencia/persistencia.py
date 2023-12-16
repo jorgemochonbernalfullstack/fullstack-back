@@ -32,4 +32,3 @@ def is_disponible(size):
     if size == "S":
         return "No disponible"
     return "Disponible"
-
