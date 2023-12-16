@@ -2,7 +2,7 @@
 
 
 def is_registrado(nombre, apellido):
-    if tp.recorrer_pedidos(nombre, apellido):
+    if recorrer_pedidos(nombre, apellido):
         print("Registrado con éxito los pedidos !!!")
     else:
         print("Ocurrió un error al registrar los pedidos !!!")
@@ -15,7 +15,7 @@ def recorrer_pedidos(nombre, apellido):
     if apellido == "" or apellido == "":
         print("Error al registrar el pedido.")
         return False
-    pt.guardar_pedido(nombre, apellido)
+    guardar_pedido(nombre, apellido)
     return True
 
 
