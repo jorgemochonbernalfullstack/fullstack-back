@@ -34,13 +34,13 @@ def test_is_registrado_fail():
 def test_recorrer_pedidos_succes():
     """Prueba funcion si recorre bien el pedido y se registra"""
     resultado = recorrer_pedidos("Jorge", "Mochon")
-    assert resultado == True
+    assert resultado is True
 
 
 def test_recorrer_pedidos_fail():
     """Prueba si recorre mal el pedido"""
     resultado = recorrer_pedidos("", "")
-    assert resultado == False
+    assert resultado is False
 
 
 def test_is_disponible_succes_no_disponible():

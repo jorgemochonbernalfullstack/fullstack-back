@@ -6,9 +6,9 @@ def is_registrado(nombre, apellido):
     if recorrer_pedidos(nombre, apellido):
         print("Registrado con éxito los pedidos !!!")
         return "Registrado con éxito los pedidos !!!"
-    else:
-        print("Ocurrió un error al registrar los pedidos !!!")
-        return "Ocurrió un error al registrar los pedidos !!!"
+
+    print("Ocurrió un error al registrar los pedidos !!!")
+    return "Ocurrió un error al registrar los pedidos !!!"
 
 
 def recorrer_pedidos(nombre, apellido):
