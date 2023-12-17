@@ -13,7 +13,7 @@ def prepara_pedido():
     """Maneja solicitudes POST para preparar pedidos"""
     cliente_nombre = request.form.get("cliente_nombre")
     cliente_apellido = request.form.get("cliente_apellido")
-    logging.info(f"Nombre: {cliente_nombre}, Apellido: {cliente_apellido}")
+    logging.info("Nombre: %s, Apellido: %s", cliente_nombre, cliente_apellido)
     mensaje = f"Pedido preparado para {cliente_nombre} {cliente_apellido}"
     limpiar_fichero()
     is_registrado(cliente_nombre, cliente_apellido)
@@ -28,5 +28,5 @@ def checksize():
     """Comprueba disponibilidad de un tamaño de pizza"""
     size = request.form.get("size")
     mensaje = is_disponible(size)
-    logging.info(f"Tamannio: {mensaje}")
+    logging.info("Tamannio: %s", mensaje)
     return Response(mensaje, 200, {"Access-Control-Allow-Origin": "*"})
