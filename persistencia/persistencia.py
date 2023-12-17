@@ -1,20 +1,23 @@
-"""Metodo que verifica que se hayan registrado con exito"""
+"""Importaciones"""
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 
 def is_registrado(nombre, apellido):
     """Verifica si se han registrado con éxito los pedidos"""
     if recorrer_pedidos(nombre, apellido):
-        print("Registrado con éxito los pedidos !!!")
+        logging.info("Registrado con éxito los pedidos !!!")
         return "Registrado con éxito los pedidos !!!"
 
-    print("Ocurrió un error al registrar los pedidos !!!")
+    logging.error("Ocurrió un error al registrar los pedidos !!!")
     return "Ocurrió un error al registrar los pedidos !!!"
 
 
 def recorrer_pedidos(nombre, apellido):
     """Verifica si el nombre y el apellido no están vacíos."""
     if nombre in ("") or apellido in (""):
-        print("Error al registrar el pedido.")
+        logging.error("Error al registrar el pedido.")
         return False
     guardar_pedido(nombre, apellido)
     return True
@@ -26,10 +29,17 @@ def guardar_pedido(nombre, apellidos):
         file.write("-" + nombre + " " + apellidos + "\n")
 
 
+def limpiar_fichero():
+    """Limpiar el contenido del archivo "pedidos.txt"."""
+    with open("pedidos.txt", "w", encoding="utf-8") as file:
+        file.write("")
+    return True
+
+
 def is_disponible(size):
     """Verificamos si está disponible o no el tamaño de la pizza"""
     if size == "":
-        print("Error al verificar el tamaño")
+        logging.error("Error al verificar el tamaño")
         return False
     if size == "S":
         return "No disponible"
