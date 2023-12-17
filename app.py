@@ -1,7 +1,7 @@
 """Importar bibliotecas de Python"""
+import logging
 from flask import Flask, request, redirect, Response
 from persistencia.persistencia import is_registrado, is_disponible, limpiar_fichero
-import logging
 
 logging.basicConfig(level=logging.INFO)
 
